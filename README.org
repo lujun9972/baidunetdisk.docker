@@ -1,0 +1,12 @@
+#+TITLE: README
+#+AUTHOR: lujun9972
+#+TAGS: baidudisk.docker
+#+DATE: [2019-07-22 一 16:22]
+#+LANGUAGE:  zh-CN
+#+STARTUP:  inlineimages
+#+OPTIONS:  H:6 num:nil toc:t \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+#+BEGIN_SRC shell
+  xhost +local:
+  docker run -it --name baidunetdisk --device /dev/dri -v /dev/shm:/dev/shm --device /dev/snd -v /tmp/.X11-unix/:/tmp/.X11-unix -e DISPLAY=${DISPLAY}  -v /run/user/${UID}/pulse:/run/user/${UID}/pulse -v /etc/machine-id:/etc/machine-id -v /usr/share/fonts/:/usr/share/fonts/ -v ~:/root/ lujun9972/baidunetdisk
+#+END_SRC
