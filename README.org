@@ -6,7 +6,7 @@
 #+STARTUP:  inlineimages
 #+OPTIONS:  H:6 num:nil toc:t \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
 
-执行下面命令
+登陆第一帐户 (UID 1000, GID 1000)，或将 =-v ~:/home/user= 中的 =~= 替换成第一帐户的家目录路径并执行下列命令：
 #+BEGIN_SRC shell
   xhost +local:
   docker run -it --name baidunetdisk --device /dev/dri -v /dev/shm:/dev/shm --device /dev/snd -v /tmp/.X11-unix/:/tmp/.X11-unix -e DISPLAY=${DISPLAY}  -v /run/user/${UID}/pulse:/run/user/${UID}/pulse -v /etc/machine-id:/etc/machine-id -v /usr/share/fonts/:/usr/share/fonts/ -v ~:/home/user lujun9972/baidunetdisk
